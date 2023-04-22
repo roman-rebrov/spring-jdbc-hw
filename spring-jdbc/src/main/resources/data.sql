@@ -1,1 +1,1 @@
-SELECT product_name as name FROM ORDERS WHERE customer_id IN (SELECT id FROM CUSTOMERS WHERE UPPER(name) = UPPER(:name));
+SELECT product_name as name FROM ORDERS JOIN CUSTOMERS ON ORDERS.customer_id = CUSTOMERS.id WHERE UPPER(name) = UPPER(:name);

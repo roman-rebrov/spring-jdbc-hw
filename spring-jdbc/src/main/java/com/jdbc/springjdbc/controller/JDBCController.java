@@ -12,16 +12,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class JDBCController {
 
-    JDBCService service;
-
-
-    public JDBCController(JDBCService service) {
-        this.service = service;
-    }
+    @Autowired
+    private JDBCService service;
 
 
     @GetMapping("/products/fetch-product")
-    public ResponseEntity getNames(@RequestParam("name") String name){
+    public ResponseEntity getNames(@RequestParam("name") String name) {
         return ResponseEntity.ok(service.getProductName(name));
     }
 }
