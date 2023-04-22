@@ -1,0 +1,1 @@
+SELECT product_name as name FROM ORDERS WHERE customer_id IN (SELECT id FROM CUSTOMERS WHERE UPPER(name) = UPPER(:name));
